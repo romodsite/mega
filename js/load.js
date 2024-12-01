@@ -182,7 +182,7 @@ function start() {
     if (bddToLoad == 'cash') {
         urlToLoad = `./testDatabaseCash.json`
     } else if (bddToLoad == 'leak') {
-        urlToLoad = `https://85.215.181.173:5000/items/${startIndex}/${offsetIndex}`
+        urlToLoad = `https://api.megafree.xyz/items/${startIndex}/${offsetIndex}`
     }
 
     console.log(urlToLoad)
@@ -228,7 +228,7 @@ function search() {
     const query = document.getElementById("searchInput").value.trim();
 
     if (query) {
-        fetch(`https://85.215.181.173:5000/items/${query}`)
+        fetch(`https://api.megafree.xyz/items/${query}`)
             .then((response) => response.json())
             .then((data) => {
                 console.log(data)
