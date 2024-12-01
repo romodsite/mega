@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="skiptranslate">Mega Free !</title>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js"></script>
+</head>
+<body>
+    <style>
+        .status-container {
+            width: 1000px;
+            height: 100%;
+            gap: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .global-status-container {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            width: 100%;
+            height: 75px;
+            background-color: #83AF61;
+            border-radius: 6px;
+        }
+    
+        .global-status-txt,
+        .global-status-txt font {
+            color: white;
+        }
+    
+        .status-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            width: 100%;
+            height: 75px;
+            border: solid 2px grey;
+            border-top: none; /* Supprime la bordure supérieure sauf pour le premier élément */
+        }
+    
+        /* Garde la bordure supérieure pour le premier .status-box */
+        .status-box:first-child {
+            border-top: solid 2px grey;
+        }
+    
+        .operational,
+        .operational font {
+            color: #83AF61;
+        }
+    
+        .inoperational,
+        .inoperational font {
+            color: red;
+        }
+    </style>
+
+    <div class="message-temp">
+        <p class="message-temp-content"></p>
+        <div class="message-cooldown-progress"></div>
+    </div>
+    <header>
+        <h1 class="skiptranslate">Mega</h1>
+        <div id="input" class="input">
+            <input type="text" id="searchInput" placeholder="Rechercher" />
+            <div class="input-img-background">
+                <img id="searchButton" src="img/search.png" alt="">
+            </div>
+        </div>
+        <div id="google_translate_element" class="pc-translate"></div>
+        <!-- <p><span>S'identifier</span> | <span>S'inscrire</span></p> -->
+    </header>
+
+    <main>
+
+        <section id="nav" class="nav skiptranslate">
+            <div id="google_translate_element" class="mobile-translate"></div>
+
+            <a href="index.html#donate" class="nav-href"><div class="nav-cat">
+                <img src="img/heart.png" alt="">
+                <h3>Donation</h3>
+            </div></a>
+            <hr>
+            <a href="index.html#home" class="nav-href"><div class="nav-cat">
+                <img src="img/house.png" alt="">
+                <h3>Home</h3>
+            </div></a>
+            <a href="index.html#leak" class="nav-href"><div class="nav-cat">
+                <img src="img/plus-18-movie.png" alt="">
+                <h3>Leaks</h3>
+            </div></a>
+            <!-- <a href="index.html#ebook" class="nav-href"><div class="nav-cat">
+                <img src="img/book.png" alt="">
+                <h3>Ebooks</h3>
+            </div></a> -->
+            <a href="index.html#cash" class="nav-href"><div class="nav-cat">
+                <img src="img/dollar.png" alt="">
+                <h3>Earn Cash</h3>
+            </div></a>
+            <hr>
+            <a href="status.html" class="nav-href no-load"><div class="nav-cat">
+                <img src="img/status.png" alt="">
+                <h3>Status</h3>
+            </div></a>
+            <a href="dmca.html" class="nav-href no-load"><div class="nav-cat">
+                <img src="img/risk.png" alt="">
+                <h3>DMCA</h3>
+            </div></a>
+        </section>
+
+        <section class="content">
+            <div id="content" style="height: 100%;">
+                <div class="status-container">
+                    <div id="global-status" class="global-status-container">
+                        <h2 class="global-status-txt">Tout nos systèmes sont operationnel</h2>
+                    </div>
+                    <div style="width: 100%;">
+                        <div class="status-box">
+                            <h4 class="skiptranslate">Bot Leaks</h4>
+                            <p id="botLeak" class="operational">opérationnel</p>
+                        </div>
+                        <!-- <div class="status-box">
+                            <h4 class="skiptranslate">Api</h4>
+                            <p class="operational">opérationnel</p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-mobile">
+                <label for="check">
+                    <input type="checkbox" id="check"/> 
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="js/check-status-client.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/translate.js"></script>
+    <script src="js/menu-mobile.js"></script>
+</body>
+</html>

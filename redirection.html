@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega Free !</title>
+</head>
+<body>
+
+    <style>
+        .content  {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            color: black;
+        }
+        a{
+            text-decoration: none;
+        }
+
+        .box-redirection {
+            box-shadow: 0px 0px 50px 5px grey;
+            padding: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 800px;
+            height: 400px;
+            background-color: #f3f3f3;
+            border-radius: 20px;
+        }
+
+        .redirection-info {
+            padding-left: 50px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .img {
+            width: 270px;
+            height: 300px;
+            object-position: center;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .redirection-access {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            width: 100%;
+            height: 50px;
+            border-radius: 10px;
+        }
+    </style>
+
+    <header>
+        <a class="skiptranslate" href="index.html"><h1>Mega</h1></a>
+        <div id="google_translate_element"></div>
+    </header>
+
+    <main class="redirection">
+        <section id="nav" class="nav skiptranslate">
+            <a href="index.html#donate" class="nav-href"><div class="nav-cat">
+                <img src="img/heart.png" alt="">
+                <h3>Donation</h3>
+            </div></a>
+            <hr>
+            <a href="index.html#home" class="nav-href"><div class="nav-cat">
+                <img src="img/house.png" alt="">
+                <h3>Home</h3>
+            </div></a>
+            <a href="index.html#leak" class="nav-href"><div class="nav-cat">
+                <img src="img/plus-18-movie.png" alt="">
+                <h3>Leaks</h3>
+            </div></a>
+            <a href="index.html#ebook" class="nav-href"><div class="nav-cat">
+                <img src="img/book.png" alt="">
+                <h3>Ebooks</h3>
+            </div></a>
+            <a href="index.html#cash" class="nav-href"><div class="nav-cat">
+                <img src="img/dollar.png" alt="">
+                <h3>Earn Cash</h3>
+            </div></a>
+        </section>
+
+        <section class="content">
+            <div class="box-redirection">
+                <img class="img" id="img" src="" alt="">
+                <div class="redirection-info">
+                    <div style="display: flex;flex-direction: column;gap: 20px;">
+                        <h3>Merci d'avoir complété le lien rémunéré</h3>
+                        <p id="p" style="font-size: 20px;">Nom de la redirection</p>
+                    </div>
+                    <a id="url" target="_blank" href=""><div class="redirection-access"><p style="color: white;">Y accéder</p></div></a>
+                </div>
+            </div>
+        </section>
+
+        
+    </main>
+
+    <script>
+        // exemple : http://example.com/?name=John&age=30
+        const urlParams = new URLSearchParams(window.location.search);
+        const imgBalise = document.getElementById("img");
+        const pBalise = document.getElementById("p");
+        const urlBalise = document.getElementById("url");
+
+        imgBalise.src = urlParams.get('img');
+        pBalise.innerHTML = urlParams.get('name');
+
+        const encryptedURL = encodeURIComponent(urlParams.get('url'));
+        
+        if (!(urlParams.get('img') && urlParams.get('name'))) {
+            window.location = "index.html"
+        } else {
+            fetch(`http://localhost:5000/decrypt-url/${encryptedURL}`)
+            .then(response => response.json())
+            .then(data => {
+                const resultDiv = document.getElementById('result');
+                if (data.decryptedURL) {
+                    urlBalise.href = data.decryptedURL;
+                } else {
+                    urlBalise.textContent = 'Erreur lors du déchiffrement';
+                    urlBalise.target = '';
+                }
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+            });
+        }
+
+    </script>
+
+<script src="js/translate.js"></script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
