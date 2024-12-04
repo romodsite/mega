@@ -186,6 +186,8 @@ main {
 }
 
 .content-img {
+    width: 90%;
+    height: 300px;
     object-position: center;
     object-fit: cover;
     border-radius: 10px;

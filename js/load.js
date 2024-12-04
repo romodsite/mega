@@ -22,8 +22,6 @@ function loadBddElements(data) {
         img.alt = item.name
         img.fetchPriority = "high";
         img.loading = "lazy";
-        img.style.width = "90%";
-        img.height = 300;
         img.classList.add("content-img");
 
         const h3 = document.createElement("h3");
