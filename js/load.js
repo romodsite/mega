@@ -75,8 +75,6 @@ function loadBddElements(data) {
 
 // Si bddToLoad == "cash" => charger les éléments avec le style de cash
 function loadCashElements(data) {
-    console.log("ok")
-    console.log(data)
     data.forEach((item) => {
 
         if (item.BigTitle) {
@@ -184,18 +182,14 @@ function start() {
     if (bddToLoad == 'cash') {
         urlToLoad = `./testDatabaseCash.json`
     } else if (bddToLoad == 'leak') {
-        urlToLoad = `https://api.megafree.xyz/items/${startIndex}/${offsetIndex}`
+        urlToLoad = `http://localhost:5000/items/${startIndex}/${offsetIndex}`
     }
-
-    console.log(urlToLoad)
     
     // fetch(`http://localhost:5000/load-leak-data/${startIndex}/${bddToLoad}`)
     fetch(`${urlToLoad}`)
         .then((response) => response.json())
         .then((responseData) => {
-            console.log(responseData.length)
             const data = responseData;
-            console.log(data)
             startIndex += 40;
 
             if (responseData.length < 40 || responseData.length == 0) {
@@ -233,7 +227,6 @@ function search() {
         fetch(`https://api.megafree.xyz/items/${query}`)
             .then((response) => response.json())
             .then((data) => {
-                console.log(data)
                 content.innerHTML = ""; // Effacer les anciens résultats
                 button.style.display = "none";
 
@@ -249,7 +242,6 @@ function search() {
                     loadBddElements(data);
                 } else if (data && bddToLoad == "cash") {
                     loadCashElements(data);
-                    console.log(data);
                 } else {
                     // Afficher un message si aucun résultat n'est trouvé
                     const div = document.createElement("h2");

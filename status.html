@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title class="skiptranslate">Mega Free !</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title class="skiptranslate">Mega Free !</title>
+    
+        <!-- Préconnexion pour accélérer les requêtes -->
+        <link rel="preconnect" href="https://api.megafree.xyz" crossorigin>
+        
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="css/style.css">
+    
+        <!-- Préchargement des images critiques -->
+        <link rel="preload" href="img/search.png" as="image">
+        <link rel="preload" href="img/heart.png" as="image">
+        <link rel="preload" href="img/house.png" as="image">
+        <link rel="preload" href="img/plus-18-movie.png" as="image">
+        <link rel="preload" href="img/dollar.png" as="image">
+        <link rel="preload" href="img/status.png" as="image">
+        <link rel="preload" href="img/risk.png" as="image">
+    
+    
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap">
+          
+    </head>
 <body>
     <style>
         .status-container {
@@ -146,5 +164,6 @@
 
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/check-status-client.js"></script>
 </body>
 </html>
