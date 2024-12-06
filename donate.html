@@ -48,14 +48,14 @@
             <div id="google_translate_element" class="mobile-translate"></div>
 
             <a href="donate.html" class="nav-href">
-                <div class="nav-cat">
+                <div class="nav-cat active">
                     <img src="img/heart.png" alt="Heart">
                     <h3>Donation</h3>
                 </div>
             </a>
             <hr>
             <a href="index.html" class="nav-href active">
-                <div class="nav-cat active">
+                <div class="nav-cat">
                     <img src="img/house.png" alt="House">
                     <h3>Home</h3>
                 </div>
@@ -97,32 +97,34 @@
 
         <section class="content">
             <div id="content"></div>
-            <div style="width: 100%; min-height: 100%;display: flex;justify-content: center; align-items: center;">
+            <div style="padding: 20px; width: 100%; min-height: 100%;display: flex;justify-content: center; align-items: center;">
                 <div class="info-container">
-                    <div class="info-title">
-                        <img src="img/information.png" alt=""> 
-                        <h3>INFORMATION</h3>
+                    <div class="info-title" style="justify-content: space-between; padding: 0px 20px;">
+                        <div>
+                            <h3>DONATION</h3>
+                        </div>
+                        <div style="height: 100%; display: flex; gap: 5px; align-items: center;">
+                            <span style="width: 16px; height: 16px; border-radius: 50%; background-color: #FF605C;"></span>
+                            <span style="width: 16px; height: 16px; border-radius: 50%; background-color: #FFBD44;"></span>
+                            <span style="width: 16px; height: 16px; border-radius: 50%; background-color: #00CA4E;"></span>
+                        </div>
                     </div>
-                    <div class="info-content">
-                        <h4 class="info-sub-title">Mise à jour du 17/11/2024</h4>
-                        <h4 class="info-text">Bienvenue sur notre nouveau site ! Vous y trouverez divers types de contenus tels que des leaks, des e-books et des méthodes pour gagner de l'argent facilement. <br> Si vous rencontrez un bug, veuillez le signaler sur notre serveur Discord.</h4>
-            
-                        <h4 class="info-sub-title">Mises à jour futures</h4>
-                        <h4 class="info-list">
-                            <ol>
-                                <li>Ajout d'une catégorie E-book</li>
-                                <li>Permettre aux utilisateurs de publier leurs propes leaks</li>
-                                <li>Status du fonctionnement de nos différents services pour savoir les possibles crash de certains services</li>
-                            </ol>
-                        </h4>
-                        <h4 class="info-text">Pour toute suggestion concernant les futures mises à jour, n'hésitez pas à nous en faire part sur notre serveur Discord dans le salon Suggestions.</h4>
-            
-                        <h4 class="info-sub-title">Suivez-nous sur les réseaux sociaux :</h4>
-                        <h4 class="info-text">Discord : <a class="info-hypertext" href="https://discord.com/invite/2Y2RUHGxkF">CLIQUER ICI</a></h4>
-                        <h4 class="info-text">Telegram : <a class="info-hypertext" href="https://t.me/leaketsexe">CLIQUER ICI</a></h4>
-            
-                        <h4 class="info-sub-title">Nous soutenir</h4>
-                        <h4 class="info-text">Vous pouvez nous soutenir gratuitement en visitant la section <a class="info-hypertext" href="#" onclick="window.location = 'index.html#cash'; location.reload()">Earn Cash</a> et en complétant les différentes méthodes pour gagner de l'argent, ce qui nous permet également de recevoir des commissions via des parrainages. Les moyens proposés sur ce site sont sécurisés et peuvent être très rentables (surtout la section Crypto). <br> Vous pouvez également nous aider en effectuant un don dans la section <a class="info-hypertext" href="#" onclick="window.location = 'index.html#donation'; location.reload()">Donation</a>, ce qui contribuera à couvrir les frais de maintenance du site.</h4>
+                    <div class="donation-content">
+                        <div class="donation">
+                            <h3><img src="img/paypal.png" alt="" >Paypal</h3>
+                            <img src="img/papyal_qr_code.png" alt="">
+                            <a href="https://paypal.me/khaosrevelation" target="_blank">https://paypal.me/khaosrevelation</a>
+                        </div>
+                        <div class="donation">
+                            <h3><img src="img/solana.png" alt="">Solana</h3>
+                            <img src="img/solana_qrcode.png" alt="">
+                            <div class="donation-clipboard">
+                                <input id="solana" type="" value="ALCPfDHHPFKdgv1U5UeHegaYMGSLmepM99eMYJBvebMV" disabled>
+                                <div onclick="copy('solana')" id="copyText">
+                                    <img src="img/copy.png" alt="">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
