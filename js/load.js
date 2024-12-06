@@ -182,7 +182,7 @@ function start() {
     if (bddToLoad == 'cash') {
         urlToLoad = `./testDatabaseCash.json`
     } else if (bddToLoad == 'leak') {
-        urlToLoad = `http://localhost:5000/items/${startIndex}/${offsetIndex}`
+        urlToLoad = `https://api.megafree.xyz/items/${startIndex}/${offsetIndex}`
     }
     
     // fetch(`http://localhost:5000/load-leak-data/${startIndex}/${bddToLoad}`)
@@ -273,7 +273,7 @@ document.getElementById("loadMoreButton").addEventListener("click", () => {
         canExecuteWait();
         start();
     } else {
-        alert("Wait 1 seconde before next requests");
+        showMessage("Too many requests");
     }
 });
 
@@ -283,7 +283,7 @@ document.getElementById("searchButton").addEventListener("click", () => {
         canExecuteWait();
         search();
     } else {
-        alert("Wait 1 seconde before next requests");
+        showMessage("Too many requests");
     }
 });
 
@@ -297,7 +297,7 @@ input.addEventListener('keypress', function(event) {
             search();
         }
     } else {
-        alert("Wait 1 seconde before next requests")
+        showMessage("Too many requests")
     }
 });
 

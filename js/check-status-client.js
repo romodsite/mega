@@ -12,7 +12,7 @@ function isMoreThanTwoHoursOld(pythonDate) {
     return diffInHours > 2;
 }
 
-fetch(`http://localhost:5000/check-status/client-status`)
+fetch(`https://api.megafree.xyz/check-status/client-status`)
     .then((response) => response.json())
     .then((responseData) => {
 
