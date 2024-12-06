@@ -16,7 +16,7 @@ body {
     flex-direction: column;
     align-items: center;
     top: 0px !important;
-    height: 100vh;
+    min-height: 100vh;
     min-height: -webkit-fill-available;
 }
 
