@@ -16,33 +16,26 @@ body {
     flex-direction: column;
     align-items: center;
     top: 0px !important;
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-    padding-bottom: env(safe-area-inset-bottom); /* Ajout pour gérer la barre en bas */
+    max-height: 100vh;
+    max-height: -webkit-fill-available;
 }
 
 html {
     height: -webkit-fill-available;
-    overflow: hidden; /* Évite un scroll inutile */
 }
 
 body > .skiptranslate {
     display: none;
 }
 
-.goog-te-gadget img {
-    display: none !important;
+.goog-te-gadget img{
+    display:none !important;
 }
 
-#goog-gt-tt, .goog-te-balloon-frame {
-    display: none !important;
-}
-.goog-text-highlight {
-    background: none !important;
-    box-shadow: none !important;
-}
+#goog-gt-tt, .goog-te-balloon-frame{display: none !important;}
+.goog-text-highlight { background: none !important; box-shadow: none !important;}
 
-.VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf{
     display: none !important;
 }
 
@@ -58,8 +51,6 @@ header {
     flex-wrap: wrap;
     box-shadow: 0px 2px 10px grey;
 }
-
-/* Input */
 
 .input {
     display: flex;
@@ -78,11 +69,11 @@ header {
     padding: 0px 10px;
 }
 
-.input input:focus {
+.input input:focus{
     outline: none;
 }
 
-.input-img-background {
+.input-img-background{
     width: 50px;
     cursor: pointer;
     display: flex;
@@ -91,18 +82,18 @@ header {
     border: solid 2px grey;
 }
 
-.input-img-background img {
+.input-img-background img{
     width: 26px;
     height: 26px;
     margin-left: 10px;
 }
 
-/* Section */
+/* section */
 
 main {
     display: flex;
     width: 100%;
-    min-height: calc(88vh - env(safe-area-inset-bottom)); /* Prend en compte la barre en bas */
+    min-height: 88vh;
 }
 
 /* Navigation */
@@ -115,15 +106,14 @@ main {
     gap: 10px;
     min-width: 200px;
     max-width: 200px;
-    min-height: calc(88vh - env(safe-area-inset-bottom)); /* Prend en compte la barre en bas */
-    max-height: calc(88vh - env(safe-area-inset-bottom)); /* Prend en compte la barre en bas */
+    min-height: 88vh;
+    max-height: 88vh;
     overflow-x: hidden;
     overflow-y: scroll;
     background-color: #f3f4f6;
     /* background-color: #3b4149; */
     color: white;
 }
-
 
 .nav hr{
     width: 180px;
