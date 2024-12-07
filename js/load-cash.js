@@ -62,7 +62,8 @@ function loadCashElements(data) {
         const link = document.createElement('a');
         link.classList.add('content-access-earn-money');
         link.href = item.link;
-        link.textContent = "S'inscrire";
+        link.target = "_blank"
+        link.textContent = "Entrez dans l’aventure";
         contentDiv.appendChild(link);
 
         // Ajouter la div au body
