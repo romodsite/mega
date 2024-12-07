@@ -109,7 +109,6 @@ main {
     min-height: 88vh;
     max-height: 88vh;
     overflow-x: hidden;
-    overflow-y: scroll;
     background-color: #f3f4f6;
     /* background-color: #3b4149; */
     color: white;
