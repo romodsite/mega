@@ -1,48 +1,67 @@
 // ########### Copy to clipboard #########
 
-const messageTemp = document.querySelector(".message-temp");
-const cooldownProgress = document.querySelector(".message-cooldown-progress");
-const messageContent = document.querySelector(".message-temp-content");
-
 var hasBeenRemoved = true;
 
-// Function to show the message
 function showMessage(txt) {
     if (hasBeenRemoved) {
+        const div = document.createElement('div');
+        div.classList.add('message-temp');
+        div.style.position = 'absolute';
+        div.style.top = '-100px'; // Position initiale hors écran
+        div.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+        div.style.opacity = '0'; // Initialement invisible
+
+        const p = document.createElement('p');
+        p.classList.add('message-temp-content');
+        p.textContent = txt;
+
+        const div_cooldown = document.createElement('div');
+        div_cooldown.classList.add('message-cooldown-progress');
+        div_cooldown.style.transformOrigin = 'left'; // Point d'ancrage pour l'animation de progression
+        div_cooldown.style.transition = 'transform 3s linear'; // Animation cooldown
+
+        div.appendChild(p);
+        div.appendChild(div_cooldown);
+        document.body.appendChild(div);
+
+        // Lancement des animations après un court délai
+        setTimeout(() => {
+            AnimationMessage(div, div_cooldown);
+        }, 10);
+    }
+}
+
+function AnimationMessage(messageTemp, cooldownProgress) {
+    if (hasBeenRemoved) {
         hasBeenRemoved = false;
-        console.log(txt)
-        messageContent.innerHTML = txt;
-        messageTemp.classList.add("show");
-        messageTemp.classList.remove("hide");
 
-        // Start the cooldown animation
-        cooldownProgress.style.transform = "scaleX(0)";
+        // Animation d'arrivée
+        messageTemp.style.transform = 'translateY(110px)';
+        messageTemp.style.opacity = '1';
 
-        // Hide the message after a delay
-        setTimeout(hideMessage, 3000); // Adjustable duration
+        // Animation de cooldown
+        cooldownProgress.style.transform = 'scaleX(0)';
+
+        // Cacher le message après un délai
+        setTimeout(() => hideMessage(messageTemp), 3000);
     }
 }
 
-// Function to hide the message
-function hideMessage() {
+function hideMessage(messageTemp) {
     if (!hasBeenRemoved) {
-        messageTemp.classList.add("hide");
-        messageTemp.classList.remove("show");
+        // Animation de sortie
+        messageTemp.style.transform = 'translateY(-100px)';
+        messageTemp.style.opacity = '0';
 
-        // Désactiver la transition, réinitialiser la barre instantanément
-        
+        // Supprimer l'élément après la fin de l'animation
         setTimeout(() => {
-            cooldownProgress.style.transition = "none"; // Désactiver la transition
-            cooldownProgress.style.transform = "scaleX(1)";
-        }, 100);
-
-        // Réactiver la transition après un court délai
-        setTimeout(() => {
-            cooldownProgress.style.transition = "transform 3s linear"; // Réactiver avec la durée souhaitée
+            messageTemp.remove();
             hasBeenRemoved = true;
-        }, 120);
+        }, 500); // Durée alignée avec l'animation
     }
 }
+
+
 
 
 function copy(copyThis) {

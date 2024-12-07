@@ -10,6 +10,12 @@ function sleep(ms) {
 }
 
 function loadBddElements(data) {
+    if (data.message) {
+        showMessage("Trop de requêtes, réessayer dans 1 minutes.")
+        return
+    }
+    startIndex += 40;
+    
     // Ajouter les nouveaux éléments au contenu
     data.forEach((item) => {
         const divContentBox = document.createElement("div");
@@ -19,7 +25,6 @@ function loadBddElements(data) {
         img.src = item.image;
         img.alt = item.name
         img.fetchPriority = "high";
-        img.loading = "lazy";
         img.classList.add("content-img");
 
         const h3 = document.createElement("h3");
@@ -101,11 +106,10 @@ function search() {
 }
 
 function start(){
-    fetch(`https://api.megafree.xyz/items/${startIndex}/40`)
+    fetch(`http://localhost:5000/items/${startIndex}/40`)
         .then((response) => response.json())
         .then((responseData) => {
             const data = responseData;
-            startIndex += 40;
 
             if (responseData.length < 40 || responseData.length == 0) {
                 document.getElementById("loadMoreButton").style.display = "none";
@@ -141,7 +145,7 @@ document.getElementById("loadMoreButton").addEventListener("click", () => {
         canExecuteWait();
         start();
     } else {
-        showMessage("Too many requests");
+        showMessage("Wait before next click");
     }
 });
 
@@ -151,7 +155,7 @@ document.getElementById("searchButton").addEventListener("click", () => {
         canExecuteWait();
         search();
     } else {
-        showMessage("Too many requests");
+        showMessage("Wait before next search");
     }
 });
 
@@ -165,7 +169,7 @@ input.addEventListener('keypress', function(event) {
             search();
         }
     } else {
-        showMessage("Too many requests")
+        showMessage("Wait before next search")
     }
 });
 
