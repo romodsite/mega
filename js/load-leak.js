@@ -106,7 +106,7 @@ function search() {
 }
 
 function start(){
-    fetch(`http://localhost:5000/items/${startIndex}/40`)
+    fetch(`https://api.megafree.xyz/items/${startIndex}/40`)
         .then((response) => response.json())
         .then((responseData) => {
             const data = responseData;
