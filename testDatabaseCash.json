@@ -4,7 +4,7 @@
     },
     {
         "title": "GetGrass:",
-        "image": "./img/seo-dashboard.png",
+        "image": "./img/seo-dashboard.webp",
         "description": "Prend une petite partie de votre bande passante afin d'obtenir des AirDrop",
         "instructions": [
             "Créer un compte (et vérifier le avec votre mail)",
@@ -15,7 +15,7 @@
     },
     {
         "title": "NodePay:",
-        "image": "./img/nodepay.png",
+        "image": "./img/nodepay.webp",
         "description": "Prend une petite partie de votre bande passante afin d'obtenir des AirDrop",
         "instructions": [
             "Créer un compte (et vérifier le avec votre mail)",
@@ -26,7 +26,7 @@
     },
     {
         "title": "BlockMesh:",
-        "image": "./img/blockmesh.png",
+        "image": "./img/blockmesh.webp",
         "description": "Prend une petite partie de votre bande passante afin d'obtenir des AirDrop",
         "instructions": [
             "Créer un compte (et vérifier le avec votre mail)",
@@ -37,7 +37,7 @@
     },
     {
         "title": "Gradient Network:",
-        "image": "./img/gradient.png",
+        "image": "./img/gradient.webp",
         "description": "Prend une petite partie de votre bande passante afin d'obtenir des AirDrop",
         "instructions": [
             "Créer un compte (et vérifier le avec votre mail)",
