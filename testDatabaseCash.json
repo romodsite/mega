@@ -7,43 +7,43 @@
         "image": "./img/seo-dashboard.png",
         "description": "Prend une petite partie de votre bande passante afin d'obtenir des AirDrop",
         "instructions": [
-            "Créer un compte",
+            "Créer un compte (et vérifier le avec votre mail)",
             "Installez NodeGrass pour gagner x2",
-            "Laissez le PC s'allumer pour en gagner"
+            "Laissez votre PC s'allumer pour en gagner"
         ],
-        "link": "Start Farming"
+        "link": "https://app.getgrass.io/register/?referralCode=HtHUSs7btuNgGDd"
     },
     {
         "title": "NodePay:",
         "image": "./img/nodepay.png",
         "description": "Prend une petite partie de votre bande passante afin d'obtenir des AirDrop",
         "instructions": [
-            "Créer un compte",
+            "Créer un compte (et vérifier le avec votre mail)",
             "Installez l'extension",
             "Laissez votre navigateur s'allumer pour en gagner"
         ],
-        "link": "Start Farming"
+        "link": "https://app.nodepay.ai/register?ref=gydNmRMZmk9h4K8"
     },
     {
         "title": "BlockMesh:",
         "image": "./img/blockmesh.png",
         "description": "Prend une petite partie de votre bande passante afin d'obtenir des AirDrop",
         "instructions": [
-            "Créer un compte",
+            "Créer un compte (et vérifier le avec votre mail)",
             "Installez l'extension",
             "Laissez votre navigateur s'allumer pour en gagner"
         ],
-        "link": "Start Farming"
+        "link": "https://app.blockmesh.xyz/register?invite_code=skyrlanie"
     },
     {
         "title": "Gradient Network:",
         "image": "./img/gradient.png",
         "description": "Prend une petite partie de votre bande passante afin d'obtenir des AirDrop",
         "instructions": [
-            "Créer un compte",
+            "Créer un compte (et vérifier le avec votre mail)",
             "Installez l'extension",
             "Laissez votre navigateur s'allumer pour en gagner"
         ],
-        "link": "Start Farming"
+        "link": "https://app.gradient.network/signup?code=TQZDA1"
     }
 ]
