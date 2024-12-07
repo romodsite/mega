@@ -2,6 +2,7 @@
 
 const botLeak = document.getElementById("botLeak");
 const statusBanner = document.getElementById("global-status");
+const content = document.querySelector(".content")
 
 function isMoreThanTwoHoursOld(pythonDate) {
     const now = new Date();
@@ -28,6 +29,8 @@ fetch(`https://api.megafree.xyz/check-status/client-status`)
             statusBanner.style.backgroundColor = "red";
             statusBanner.querySelector("h2").textContent = "Nous avons un problème général sur nos systèmes";
         }
+
+        content.style.display = "flex"
         
     })
     .catch((error) =>
