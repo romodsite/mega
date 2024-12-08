@@ -4,6 +4,7 @@ let startIndex = 0;
 const input = document.getElementById('searchInput');
 const divInput = document.getElementById('input');
 var canExecute = true;
+const nLeak = document.getElementById('nLeak');
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -172,5 +173,27 @@ input.addEventListener('keypress', function(event) {
         showMessage("Wait before next search")
     }
 });
+
+fetch(`https://api.megafree.xyz/countItems`)
+    .then((response) => response.json())
+    .then((responseData) => {
+        const data = responseData;
+
+        if (responseData.length < 40 || responseData.length == 0) {
+            document.getElementById("loadMoreButton").style.display = "none";
+        }
+
+        if (data) {
+            nLeak.textContent = data["nLeak"];
+        } else {
+            nLeak.textContent = "Bad response from server";
+        }
+        
+        // Désactiver le bouton si `nextStartIndex` est null
+        // if (startIndex === null) {
+        //     document.getElementById("loadMoreButton").style.display = "none";
+        // }
+    })
+.catch((error) => console.error("Erreur:", error));
 
 start();
